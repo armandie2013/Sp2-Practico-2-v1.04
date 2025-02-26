@@ -69,7 +69,6 @@ updateSuperHero("Spiderman");
 
 
 
-
 // Metodo para eliminar //
 async function deleteSuperHero(nombreSuperHeroe) {
   const result = await SuperHero.deleteOne({
