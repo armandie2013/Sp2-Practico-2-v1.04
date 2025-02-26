@@ -8,7 +8,12 @@ mongoose
   .then(() => console.log("Conexion exitosa con MongoDB"))
   .catch((error) => console.error("Error al conectar MongoDB"));
 
-// Crea un esquema y un modelo //
+
+
+
+
+
+  // Crea un esquema y un modelo //
 const superheroSchema = new mongoose.Schema(
   {
     nombreSuperHeroe: { type, String, required: true },
@@ -26,6 +31,9 @@ const superheroSchema = new mongoose.Schema(
 );
 
 const SuperHero = mongoose.model("SuperHero", superheroSchema);
+
+
+
 
 // Metodo CRUD para insertar, actualizar, eliminar y buscar //
 async function insertSuperHero() {
@@ -46,6 +54,9 @@ async function insertSuperHero() {
 
 insertSuperHero();
 
+
+
+
 // Metodo para actualizar //
 async function updateSuperHero(nombreSuperHeroe) {
   const result = await SuperHero.updateOne(
@@ -55,6 +66,9 @@ async function updateSuperHero(nombreSuperHeroe) {
 }
 
 updateSuperHero("Spiderman");
+
+
+
 
 // Metodo para eliminar //
 async function deleteSuperHero(nombreSuperHeroe) {
@@ -66,8 +80,10 @@ async function deleteSuperHero(nombreSuperHeroe) {
 
 deleteSuperHero("Spiderman");
 
-// Metodo para buscar //
 
+
+
+// Metodo para buscar //
 async function findSuperHeroes() {
   const heroes = await SuperHero.find({ planetaOrigen: "Tierra" });
   console.log("Superheroes encontrados:", heroes);
