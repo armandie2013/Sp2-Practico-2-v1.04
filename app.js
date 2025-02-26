@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://Grupo-05:grupo05@cursadanodejs.ls9ii.mongodb.net/Node-js"
+    'mongodb+srv://Grupo-05:grupo05@cursadanodejs.ls9ii.mongodb.net/Node-js'
   )
   .then(() => console.log("Conexion exitosa con MongoDB"))
   .catch((error) => console.error("Error al conectar MongoDB"));
@@ -55,8 +55,7 @@ async function insertSuperHero() {
 insertSuperHero();
 
 
-
-
+/*
 // Metodo para actualizar //
 async function updateSuperHero(nombreSuperHeroe) {
   const result = await SuperHero.updateOne(
@@ -88,4 +87,4 @@ async function findSuperHeroes() {
   console.log("Superheroes encontrados:", heroes);
 }
 
-findSuperHeroes();
+findSuperHeroes();*/
