@@ -3,12 +3,10 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    'mongodb+srv://Grupo-05:grupo05@cursadanodejs.ls9ii.mongodb.net/Node-js'
+    'mongodb+srv://Grupo-05:grupo05@cursadanodejs.ls9ii.mongodb.net/Node-js',
   )
   .then(() => console.log("Conexion exitosa con MongoDB"))
   .catch((error) => console.error("Error al conectar MongoDB"));
-
-
 
 
 
@@ -20,7 +18,7 @@ const superheroSchema = new mongoose.Schema(
     nombreReal: { type: String, required: true },
     edad: { type: Number, min: 0 },
     planetaOrigen: { type: String, default: "Desconocido" },
-    debilidad: { String },
+    debilidad:  String,
     poderes: [String],
     aliados: [String],
     enemigos: [String],
@@ -30,32 +28,30 @@ const superheroSchema = new mongoose.Schema(
   { collection: "Grupo-05" }
 );
 
-const SuperHero = mongoose.model("SuperHero", superheroSchema);
-
-
 
 
 // Metodo CRUD para insertar, actualizar, eliminar y buscar //
+const SuperHero = mongoose.model("SuperHero", superheroSchema);
 async function insertSuperHero() {
   const hero = new SuperHero({
-    nombreSuperHeroe: "Spiderman",
-    nombreReal: "Peter Parker",
+    nombreSuperHeroe: 'Spiderman',
+    nombreReal: 'Peter Parker',
     edad: 25,
-    planetaOrigen: "Tierra",
-    debilidad: "Radioactiva",
-    poderes: ["Trepar paredes", "Sentido aracnido", "Super fuerza", "Agilidad"],
-    aliados: ["Ironman"],
-    enemigos: ["Duende Verde"],
-    creador: "Diego",
+    planetaOrigen: 'Tierra',
+    debilidad: 'Radioactiva',
+    poderes: ['Trepar paredes', 'Sentido aracnido', 'Super fuerza', 'Agilidad'],
+    aliados: ['Ironman'],
+    enemigos: ['Duende Verde'],
+    creador: 'Diego',
   });
   await hero.save();
-  console.log("Superheroe insertado", hero);
+  console.log('Superheroe insertado', hero);
 }
 
 insertSuperHero();
 
 
-/*
+
 // Metodo para actualizar //
 async function updateSuperHero(nombreSuperHeroe) {
   const result = await SuperHero.updateOne(
@@ -87,4 +83,4 @@ async function findSuperHeroes() {
   console.log("Superheroes encontrados:", heroes);
 }
 
-findSuperHeroes();*/
+findSuperHeroes();
