@@ -16,7 +16,7 @@ mongoose
   // Crea un esquema y un modelo //
 const superheroSchema = new mongoose.Schema(
   {
-    nombreSuperHeroe: { type, String, required: true },
+    nombreSuperHeroe: { type: String, required: true },
     nombreReal: { type, String, required: true },
     edad: { type: Number, min: 0 },
     planetaOrigen: { type: String, default: "Desconocido" },
